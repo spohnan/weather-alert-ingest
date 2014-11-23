@@ -28,7 +28,6 @@ object HdfsWordCount {
       System.exit(1)
     }
 
-    StreamingExamples.setStreamingLogLevels()
     val sparkConf = new SparkConf().setAppName("HdfsWordCount")
     val ssc = new StreamingContext(sparkConf, Seconds(2))
     val lines = ssc.textFileStream(args(0))
