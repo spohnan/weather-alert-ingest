@@ -12,4 +12,5 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.2.1" % "test"
 )
 
+// See https://github.com/sbt/sbt-assembly for more options
 assemblyJarName := "weather-alert-ingest.jar"
