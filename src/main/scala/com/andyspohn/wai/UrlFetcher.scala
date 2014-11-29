@@ -16,7 +16,7 @@ trait UrlFetcher {
   val DefaultSecondsToWaitTimeout = 3
 
   //TODO: Allow more configuration options
-  val cache = new InMemoryHttpResponseCacher(1, 1, Duration(2, HOURS), Duration(90, MINUTES))
+  val cache = new InMemoryHttpResponseCacher(10, 1, Duration(2, HOURS), Duration(90, MINUTES))
 
   def fetch(urlStr: String, secondsToWait: Int = DefaultSecondsToWaitTimeout): (HttpResponseCode, String) = {
     implicit val eTagClient = new ETagAwareHttpClient(new ApacheHttpClient, cache)
